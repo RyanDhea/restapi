@@ -1,0 +1,184 @@
+{
+	"info": {
+		"_postman_id": "c7a78096-ce2c-4bc2-aa3d-c857270cc5a8",
+		"name": "restapi",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Transaction",
+			"item": [
+				{
+					"name": "post create transaction",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"nominal\": 500\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8080/api/transactions/memberId/1/jenisTransaksiId/1",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"transactions",
+								"memberId",
+								"1",
+								"jenisTransaksiId",
+								"1"
+							]
+						},
+						"description": "by member Id and jenis transaksi Id"
+					},
+					"response": []
+				},
+				{
+					"name": "get Transaction by Transaction id",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/api/transactions/transactionId/1",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"transactions",
+								"transactionId",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get Transaction between Date",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/api/transactions/tglTransaksi1/07-19-2022/tglTransaksi2/07-22-2022",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"transactions",
+								"tglTransaksi1",
+								"07-19-2022",
+								"tglTransaksi2",
+								"07-22-2022"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Member",
+			"item": [
+				{
+					"name": "get All Member",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/api/members",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"members"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "post create new Member",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJpYXQiOjE2NTg0NzU3NTgsImV4cCI6MTY1ODQ4Mjk1OCwidXNlcklkIjoxLCJlbWFpbCI6InJ5YW5AZ21haWwuY29tIiwiZmlyc3ROYW1lIjoicnlhbiIsImxhc3ROYW1lIjoiZGhlYSJ9.VZ6Q8ZgH3vfQUpNQpYOlwIS_9UanpgHWUCk7o4HRjmg",
+								"type": "default",
+								"disabled": true
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\": \"Testing Anggota 5\",\n    \"tgl_lahir\": \"01 Februari 1990\",\n    \"alamat\": \"Jalan Testing1\",\n    \"saldo\": 1000\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8080/api/members",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"members"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "User",
+			"item": [
+				{
+					"name": "login user and get token",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"email\": \"ryan@gmail.com\",\n    \"password\": \"ryan\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8080/api/users/login",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"users",
+								"login"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
